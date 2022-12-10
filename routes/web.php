@@ -50,6 +50,7 @@ Route::view('/forum', 'forum')->name('forum');
 Auth::routes();
 Route::view('/home', 'home')->name('home');
 Route::post('/search','HomeController@search')->name('search');
+Route::view('/gr', 'gr')->name('gr');
 
 // Route::group(['middleware' => ['auth','lang']], function () {
 //     Route::get('/lang/{lang}', 'LangController@setLang')->name('lang');
