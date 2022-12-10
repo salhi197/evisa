@@ -40,6 +40,17 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'police' => [
+            'driver' => 'session',
+            'provider' => 'polices',
+        ],
+
+        'gr' => [
+            'driver' => 'session',
+            'provider' => 'grs',
+        ],
+
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -74,6 +85,20 @@ return [
             'model' => App\Admin::class,
         ],
 
+
+        'polices' => [
+            'driver' => 'eloquent',
+            'model' => App\Police::class,
+        ],
+
+
+
+
+        'grs' => [
+            'driver' => 'eloquent',
+            'model' => App\Gr::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -106,6 +131,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        'grs' => [
+            'provider' => 'grs',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',

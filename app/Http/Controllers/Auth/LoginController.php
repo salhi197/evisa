@@ -29,6 +29,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:gr')->except('logout');
+        $this->middleware('guest:police')->except('logout');
     }
 
 
@@ -60,6 +62,14 @@ class LoginController extends Controller
         ]);
     }
 
+    public function showGrLoginForm()
+    {
+        return view('auth.gr', [
+            'url' => 'gr'
+        ]);
+    }
+
+
     public function adminLogin(Request $request)
     {
         if ($this->guardLogin($request, 'admin')) {
@@ -67,5 +77,14 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
+    public function grLogin(Request $request)
+    {
+        if ($this->guardLogin($request, 'gr')) {
+            return redirect()->intended('/gr');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
 
 }

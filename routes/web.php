@@ -13,8 +13,12 @@
 
 
 Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
+Route::get('/login/gr', 'Auth\LoginController@showGrLoginForm');
+Route::get('/login/police', 'Auth\LoginController@showPoliceLoginForm');
 Route::get('/rapport', 'HomeController@rapport')->name('rapport');
 Route::post('/login/admin', 'Auth\LoginController@adminLogin')->name('login.admin');
+Route::post('/login/gr', 'Auth\LoginController@grLogin')->name('login.gr');
+Route::post('/login/police', 'Auth\LoginController@policeLogin')->name('login.police');
 
 
 
@@ -50,9 +54,11 @@ Route::view('/forum', 'forum')->name('forum');
 Auth::routes();
 Route::view('/home', 'home')->name('home');
 Route::post('/search','HomeController@search')->name('search');
-Route::view('/gr', 'gr')->name('gr');
 
-// Route::group(['middleware' => ['auth','lang']], function () {
+Route::get('/gr', 'HomeController@gr')->name('gr');
+Route::get('/police', 'HomeController@police')->name('police');
+
+// Route::policeoup(['middleware' => ['auth','lang']], function () {
 //     Route::get('/lang/{lang}', 'LangController@setLang')->name('lang');
 //     Route::get('/home/inscription', 'InscriptionController@index');
      
@@ -109,6 +115,17 @@ Route::group(['prefix' => 'reglement','middleware' =>'lang', 'as' => 'reglement'
             
 });
 
+Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], function () {
+    Route::get('/', ['as' => '.index', 'uses' => 'DemandeController@index']);
+    Route::get('/create', ['as' => '.create', 'uses' => 'DemandeController@create']);
+    Route::post('/store', ['as' => '.store', 'uses' => 'DemandeController@store']);
+    Route::post('/update/{id_demande}', ['as' => '.update', 'uses' => 'DemandeController@update']);    
+
+    Route::get('/edit/{id_demande}', ['as' => '.edit', 'uses' => 'DemandeController@edit']);
+    Route::get('/view/{id_demande}', ['as' => '.view', 'uses' => 'DemandeController@view']);
+    Route::get('/destroy/{id_demande}', ['as' => '.destroy', 'uses' => 'DemandeController@destroy']);
+            
+});
 
 Route::group(['prefix' => 'payment','middleware' =>'lang', 'as' => 'payment'], function () {
     Route::get('/rechargements', ['as' => '.rechargements', 'uses' => 'PaymentController@rechargements']);

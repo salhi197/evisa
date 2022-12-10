@@ -12,7 +12,7 @@
 <link rel="icon" href="" type="image/x-icon"/>
 <link rel="shortcut icon" href="" type="image/x-icon"/>
 <!-- TITLE -->
-<title>Galaxy App  - Connexion</title>
+<title>Evisa</title>
 <!-- DASHBOARD CSS -->
 <link href="{{asset('assets/css/dashboard.css')}}" rel="stylesheet"/>
 <link href="{{asset('assets/css/dashboard-dark.css')}}" rel="stylesheet"/>

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Wilaya;
-use App\Fichier;
-use App\Telephone;
-use Mail;
+
+use App\Demande;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,6 +38,23 @@ class HomeController extends Controller
         return view('search');
     }
 
+
+
+    public function police()
+    {
+        $demandes = Demande::where('police',1)->get();        
+        return view('police',compact('demandes'));
+        
+    }
+
+
+
+    public function gr()
+    {
+        $demandes = Demande::where('gr',1)->get();        
+        return view('gr',compact('demandes'));
+        
+    }
 
     //
 }

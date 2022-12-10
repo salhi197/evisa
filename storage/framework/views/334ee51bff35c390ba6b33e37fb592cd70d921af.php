@@ -1,110 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
+	
+<!-- Mirrored from laravel.spruko.com/solic/Horizontal-Light-ltr/login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Sep 2020 16:37:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Vjr Login Admin</title>
-    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('vjr/assets/img/favicon.ico')); ?>"/>
-    <link href="<?php echo e(asset('vjr/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
-    <script src="<?php echo e(asset('vjr/assets/js/loader.js')); ?>')}}"></script>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="<?php echo e(asset('vjr/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo e(asset('vjr/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo e(asset('vjr/assets/css/structure.css')); ?>" rel="stylesheet" type="text/css" class="structure" />
-    <link href="<?php echo e(asset('vjr/assets/css/authentication/form-1.css')); ?>" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('vjr/assets/css/forms/theme-checkbox-radio.css')); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('vjr/assets/css/forms/switches.css')); ?>">
-	<link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta content="In a world that is constantly changing,we are the best and the most reliable partners.you are a person or company Galaxy is the privileged place for great achievements our specilized team focuses on using the best technology to achieve your dreqms and make them a reality." name="description">
+		<!--favicon -->
+<link rel="icon" href="" type="image/x-icon"/>
+<link rel="shortcut icon" href="" type="image/x-icon"/>
+<!-- TITLE -->
+<title>Evisa</title>
+<!-- DASHBOARD CSS -->
+<link href="<?php echo e(asset('assets/css/dashboard.css')); ?>" rel="stylesheet"/>
+<link href="<?php echo e(asset('assets/css/dashboard-dark.css')); ?>" rel="stylesheet"/>
+<link href="<?php echo e(asset('assets/css/style-modes.css')); ?>" rel="stylesheet"/>
+<!-- HORIZONTAL-MENU CSS -->
+<link href="<?php echo e(asset('assets/plugins/horizontal-menu/dropdown-effects/fade-down.css')); ?>" rel="stylesheet">
+<!--C3.JS CHARTS PLUGIN -->
+<link href="<?php echo e(asset('assets/plugins/charts-c3/c3-chart.css')); ?>" rel="stylesheet"/>
+<!-- SINGLE-PAGE CSS -->
+<link href="<?php echo e(asset('assets/plugins/single-page/css/main.css')); ?>" rel="stylesheet" type="text/css">
+<!-- PERFECT SCROLL BAR CSS-->
+<link href="<?php echo e(asset('assets/plugins/pscrollbar/perfect-scrollbar.css')); ?>" rel="stylesheet" />
+<!--- FONT-ICONS CSS -->
+<link href="<?php echo e(asset('assets/css/icons.css')); ?>" rel="stylesheet"/>
+<!-- SELECT2 CSS -->
+<!-- Skin css-->
+<link href="<?php echo e(asset('assets/skins/skins-modes/color22.css')); ?>"  id="theme" rel="stylesheet" type="text/css" media="all" />
+<!-- SIDEBAR CSS -->
 
+<!-- Switcher CSS -->
 </head>
-<body class="form">
-    
+<link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
 
-    <div class="form-container">
-        <div class="form-form">
-            <div class="form-form-wrap">
-                <div class="form-container">
-                    <div class="form-content">
+		
+	<body class="default-header">	    
+		<div class="login-img">
+			<div id="global-loader"></div>
+			<div class="page">
+				<div class="">
+					<div class="col col-login mx-auto">
+						<div class="text-center">
+                            <!-- <img src="<?php echo e(asset('log.png')); ?>" width="150px"/> -->
+						</div>
+					</div>
+					<div class="container-login100">
+						<div class="wrap-login100 p-6">
+							
+                            <form class="login100-form validate-form" method="POST" action="<?php echo e(route('login.admin')); ?>" aria-label="Login">
+                                <?php echo csrf_field(); ?>
+                                <span class="login100-form-title">
+									Connexion 
+								</span>
 
-                        <h1 class="">Log In to <a href="index.html"><span class="brand-name">CORK</span></a></h1>
-                        <p class="signup-link">New Here? <a href="auth_register.html">Create an account</a></p>
-                        
-						<form class="text-left" method="POST" action="<?php echo e(route('login.admin')); ?>" aria-label="Login">
-                            <div class="form">
+								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <label>Email : </label>
+                                <input id="email"  type="text" class="form-control" name="email" value="" required autofocus>
+									<span class="focus-input100"></span>
+									<span class="symbol-input100">
+									</span>
+								</div>
+								<div class="wrap-input100 validate-input" data-validate = "Password is required">
+                                <label>Mot de passe: </label>
+                                <input id="password" type="password" class="form-control" name="password" required>
+										<span class="focus-input100"></span>
+									<span class="symbol-input100">
+									</span>
+								</div>
+								<div class="container-login100-form-btn">
+									<button type="submit" href="#" class="login100-form-btn btn-primary">
+                                        <i class="fa fa-door-open"></i>Connexion
+									</button>
+								</div>
+								<p>
+									Vous n'avez pas encore un comtpe ?
+									<a href="<?php echo e(route('register')); ?>"> S'enregistrer .</a>
 
-                                <div id="username-field" class="field-wrapper input">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <input id="email" name="email" type="text" class="form-control" placeholder="email">
-                                </div>
+								</p>
+								<br>
+								<a href="<?php echo e(route('forget.password')); ?>">
+									Mot de passe Oublié ?
+								</a>
 
-                                <div id="password-field" class="field-wrapper input mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="d-sm-flex justify-content-between">
-                                    <div class="field-wrapper toggle-pass">
-                                        <p class="d-inline-block">Show Password</p>
-                                        <label class="switch s-primary">
-                                            <input type="checkbox" id="toggle-password" class="d-none">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Log In</button>
-                                    </div>
-                                    
-                                </div>
+							</form>
+						</div>
+					</div>
+					<!-- CONTAINER CLOSED -->
+				</div>
+			</div>
+		</div>
+		<!-- BACKGROUND-IMAGE CLOSED -->
+		
+		<!-- JQUERY SCRIPTS -->
+<script src="<?php echo e(asset('assets/js/vendors/jquery-3.2.1.min.js')); ?>"></script>
+<!-- BOOTSTRAP SCRIPTS -->
+<script src="<?php echo e(asset('assets/js/vendors/bootstrap.bundle.min.js')); ?>"></script>
+<!-- SPARKLINE -->
+<script src="<?php echo e(asset('assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')); ?>"></script>
+<!-- CUSTOM JS-->
+<script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
 
-                                <div class="field-wrapper text-center keep-logged-in">
-                                    <div class="n-chk new-checkbox checkbox-outline-primary">
-                                        <label class="new-control new-checkbox checkbox-outline-primary">
-                                          <input type="checkbox" class="new-control-input">
-                                          <span class="new-control-indicator"></span>Keep me logged in
-                                        </label>
-                                    </div>
-                                </div>
+<script src="<?php echo e(asset('assets/js/custom.js')); ?>"></script>	
+<script>
+        <?php if($errors->any()): ?>
+        $(function(){
+                toastr.error('<?php echo e($errors->first()); ?>')
+            })
 
-                                <div class="field-wrapper">
-                                    <a href="auth_pass_recovery.html" class="forgot-pass-link">Forgot Password?</a>
-                                </div>
+        <?php endif; ?>
+        <?php if(session('success')): ?>
+            toastr.success('<?php echo e(Session::get("success")); ?>')
+        <?php endif; ?>
+</script>
 
-                            </div>
-                        </form>                        
-                        <p class="terms-conditions">© 2022 All Rights Reserved. <a href="index.html">CORK</a> is a product of Designreset. <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.</p>
+	</body>
 
-                    </div>                    
-                </div>
-            </div>
-        </div>
-        <div class="form-image">
-            <div class="l-image">
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="<?php echo e(asset('vjr/assets/js/libs/jquery-3.1.1.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vjr/bootstrap/js/popper.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vjr/bootstrap/js/bootstrap.min.js')); ?>"></script>
-    
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="<?php echo e(asset('vjr/assets/js/authentication/form-1.js')); ?>"></script>
-	<script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
-	<script>
-			<?php if($errors->any()): ?>
-			$(function(){
-					toastr.error('<?php echo e($errors->first()); ?>')
-				})
-
-			<?php endif; ?>
-			<?php if(session('success')): ?>
-				toastr.success('<?php echo e(Session::get("success")); ?>')
-			<?php endif; ?>
-	</script>
-
-</body>
 </html>
