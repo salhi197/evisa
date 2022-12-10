@@ -22,7 +22,7 @@ Route::post('/login/police', 'Auth\LoginController@policeLogin')->name('login.po
 
 
 
-Route::get('/cleareverything', function () {
+Route::get('/clear', function () {
     $clearcache = Artisan::call('cache:clear');
     echo "Cache cleared<br>";
 
