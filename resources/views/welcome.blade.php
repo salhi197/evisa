@@ -325,7 +325,7 @@
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
-                                {!! NoCaptcha::renderJs() !!}
+                              
 
                                     <form>
                                         <div class="form-row mb-4">
