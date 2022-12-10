@@ -425,7 +425,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {!! NoCaptcha::display() !!}
+
                                         <button type="submit" class="btn btn-primary mt-3">Valider</button>
                                     </form>
                                 </div>
