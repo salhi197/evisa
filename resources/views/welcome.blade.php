@@ -90,7 +90,7 @@
             <ul class="navbar-item flex-row nav-dropdowns">
                 <li class="nav-item dropdown language-dropdown more-dropdown">
                     <div class="dropdown custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('evisa/assets/img/ca.png')}}" class="flag-width" alt="flag">
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         </a>
 
@@ -98,10 +98,10 @@
                             <div class="search-dropdown">
                                 <input type="text" class="form-control" placeholder="Search">
                             </div>
-                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"><img src="{{asset('evisa/assets/img/de.png')}}" class="flag-width" alt="flag"> German</a>
-                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"><img src="{{asset('evisa/assets/img/jp.png')}}" class="flag-width" alt="flag"> Japanese</a>
-                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"><img src="{{asset('evisa/assets/img/fr.png')}}" class="flag-width" alt="flag"> French</a>
-                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"><img src="{{asset('evisa/assets/img/ca.png')}}" class="flag-width" alt="flag"> English</a>
+                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"> German</a>
+                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"> Japanese</a>
+                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"> French</a>
+                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"> English</a>
                         </div>
                     </div>
                 </li>
@@ -325,6 +325,8 @@
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
+                                {!! NoCaptcha::renderJs() !!}
+
                                     <form>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
@@ -423,6 +425,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {!! NoCaptcha::display() !!}
                                         <button type="submit" class="btn btn-primary mt-3">Valider</button>
                                     </form>
                                 </div>
@@ -454,7 +457,7 @@
     <script src="{{asset('evisa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
     <script src="{{asset('evisa/bootstrap/js/popper.min.js')}}"></script>
     <script src="{{asset('evisa/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('evisa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('evisa/assets/js/app.js')}}"></script>
 
     <script>
@@ -462,10 +465,9 @@
             App.init();
         });
     </script>
-    <script src="plugins/highlight/highlight.pack.js')}}"></script>
+    <script src="{{asset('evisa/plugins/highlight/highlight.pack.js')}}"></script>
     <script src="{{asset('evisa/assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{asset('evisa/assets/js/scrollspyNav.js')}}"></script>
 </body>
 
 </html>
