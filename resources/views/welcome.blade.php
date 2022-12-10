@@ -81,7 +81,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <form class="form-inline search-full form-inline search" role="search">
                         <div class="search-bar">
-                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
+                            <input required type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
                         </div>
                     </form>
                 </li>
@@ -96,7 +96,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
                             <div class="search-dropdown">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input required type="text" class="form-control" placeholder="Search">
                             </div>
                             <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"> German</a>
                             <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"> Japanese</a>
@@ -299,7 +299,7 @@
 
                 <div class="toggle-switch">
                     <label class="switch s-icons s-outline  s-outline-secondary">
-                            <input type="checkbox" checked="" class="theme-shifter">
+                            <input required type="checkbox" checked="" class="theme-shifter">
                             <span class="slider round">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
@@ -327,59 +327,59 @@
                                 <div class="widget-content widget-content-area">
                               
 
-                                    <form>
+                                    <form method="post" route="{{route('demande.store')}}">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Nom</label>
-                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required name="nom" type="text" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Prénom</label>
-                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required name="prenom" type="text" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Date de Naissance</label>
-                                                <input type="date" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required name="naissance" type="date" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Lieu de Naissance</label>
-                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required name="lieu" type="text" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">N°Téléphone</label>
-                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required name="telephone" type="text" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Email</label>
-                                                <input type="email" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required name="email" type="email" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputCity">Pays</label>
-                                                <input type="text" class="form-control" id="inputCity">
+                                                <input required name="pays" type="text" class="form-control" id="inputCity">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputState">Région</label>
-                                                <input type="text" class="form-control" id="inputCity">
+                                                <input required name="region" type="text" class="form-control" id="inputCity">
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress">Addresse</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                            <input required name="adress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress2"></label>
-                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                            <input required name="" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                                         </div>
                                         <h6>Informations Familialle</h6>
                                         <div class="form-group mb-4">
                                             <label for="inputState">Situation</label>
-                                            <select id="inputState" class="form-control">
+                                            <select id="inputState" name="situation" class="form-control">
                                                 <option selected>Choose...</option>
                                                 <option>Mariée</option>
                                                 <option>Célébataire</option>
@@ -389,29 +389,29 @@
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Prénom Père</label>
-                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required type="text" name="pere" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Nom & Prénom Mère</label>
-                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required type="text" name="nom_prenom_mere" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Date de Naissance Père</label>
-                                                <input type="date" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required type="date" name="naissance_pere" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Date de Naissance Mère</label>
-                                                <input type="date" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required type="date" class="form-control" name="naissance_mere" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="custom-file-container" data-upload-id="myFirstImage">
                                             <h6>Passeport</h6>
                                             <label> <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
                                             <label class="custom-file-container__custom-file">
-                                                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
-                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <input required type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
+                                                <input required type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                                                 <span class="custom-file-container__custom-file__custom-file-control"></span>
                                             </label>
                                             <div class="custom-file-container__image-preview"></div>
@@ -420,7 +420,7 @@
                                         <div class="form-group">
                                             <div class="form-check pl-0">
                                                 <div class="custom-control custom-checkbox checkbox-info">
-                                                    <input type="checkbox" class="custom-control-input" id="gridCheck">
+                                                    <input required type="checkbox" class="custom-control-input" id="gridCheck">
                                                     <label class="custom-control-label" for="gridCheck">Valider mes informations</label>
                                                 </div>
                                             </div>

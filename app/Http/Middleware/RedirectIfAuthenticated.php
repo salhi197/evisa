@@ -32,6 +32,9 @@ class RedirectIfAuthenticated
         if ($guard === 'gr' && Auth::guard($guard)->check()) {
             return redirect('/gr');
         }
+        if ($guard === 'police' && Auth::guard($guard)->check()) {
+            return redirect('/police');
+        }
 
 
         if (Auth::guard($guard)->check()) {

@@ -15,12 +15,11 @@ class Police extends Authenticatable
      * @var string
     */
     protected $guard = 'police';
+    protected $table = 'polices';
 
     protected $fillable = [
         'name', 'email', 'password','password_text','solde'
     ];
-
-
 
 
     protected $hidden = [
