@@ -7,23 +7,24 @@ use Illuminate\Http\Request;
 
 class DemandeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $demandes = Demande::all();
         return view('demandes.index',compact('demandes'));
-
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function gr()
+    {
+        $demandes = Demande::where('gr',1)->get();
+        return view('demandes.gr',compact('demandes'));
+    }
+
+    public function police()
+    {
+        $demandes = Demande::where('police',1)->get();
+        return view('demandes.police',compact('demandes'));
+    }
+
     public function create()
     {
         //

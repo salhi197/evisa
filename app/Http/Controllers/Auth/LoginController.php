@@ -62,6 +62,14 @@ class LoginController extends Controller
         ]);
     }
 
+
+    public function showPoliceLoginForm()
+    {
+        return view('auth.police', [
+            'url' => 'police'
+        ]);
+    }
+
     public function showGrLoginForm()
     {
         return view('auth.gr', [
@@ -82,6 +90,15 @@ class LoginController extends Controller
     {
         if ($this->guardLogin($request, 'gr')) {
             return redirect()->intended('/gr');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
+
+    public function policeLogin(Request $request)
+    {
+        if ($this->guardLogin($request, 'police')) {
+            return redirect()->intended('/police');
         }
         return back()->withInput($request->only('email', 'remember'));
     }

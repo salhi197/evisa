@@ -131,6 +131,13 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+
+        'polices' => [
+            'provider' => 'polices',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
         'grs' => [
             'provider' => 'grs',
             'table' => 'password_resets',

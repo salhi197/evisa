@@ -1,121 +1,93 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-	
-<!-- Mirrored from laravel.spruko.com/solic/Horizontal-Light-ltr/login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Sep 2020 16:37:27 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-		<!-- Meta data -->
-		<meta charset="UTF-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-		<meta content="In a world that is constantly changing,we are the best and the most reliable partners.you are a person or company Galaxy is the privileged place for great achievements our specilized team focuses on using the best technology to achieve your dreqms and make them a reality." name="description">
-		<!--favicon -->
-<link rel="icon" href="" type="image/x-icon"/>
-<link rel="shortcut icon" href="" type="image/x-icon"/>
-<!-- TITLE -->
-<title>Evisa</title>
-<!-- DASHBOARD CSS -->
-<link href="<?php echo e(asset('assets/css/dashboard.css')); ?>" rel="stylesheet"/>
-<link href="<?php echo e(asset('assets/css/dashboard-dark.css')); ?>" rel="stylesheet"/>
-<link href="<?php echo e(asset('assets/css/style-modes.css')); ?>" rel="stylesheet"/>
-<!-- HORIZONTAL-MENU CSS -->
-<link href="<?php echo e(asset('assets/plugins/horizontal-menu/dropdown-effects/fade-down.css')); ?>" rel="stylesheet">
-<!--C3.JS CHARTS PLUGIN -->
-<link href="<?php echo e(asset('assets/plugins/charts-c3/c3-chart.css')); ?>" rel="stylesheet"/>
-<!-- SINGLE-PAGE CSS -->
-<link href="<?php echo e(asset('assets/plugins/single-page/css/main.css')); ?>" rel="stylesheet" type="text/css">
-<!-- PERFECT SCROLL BAR CSS-->
-<link href="<?php echo e(asset('assets/plugins/pscrollbar/perfect-scrollbar.css')); ?>" rel="stylesheet" />
-<!--- FONT-ICONS CSS -->
-<link href="<?php echo e(asset('assets/css/icons.css')); ?>" rel="stylesheet"/>
-<!-- SELECT2 CSS -->
-<!-- Skin css-->
-<link href="<?php echo e(asset('assets/skins/skins-modes/color22.css')); ?>"  id="theme" rel="stylesheet" type="text/css" media="all" />
-<!-- SIDEBAR CSS -->
-
-<!-- Switcher CSS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>Ministere de Tourisme</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" />
+    <link href="<?php echo e(asset('evisa/admin/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
+    <script src="<?php echo e(asset('evisa/admin/assets/js/loader.js')); ?>"></script>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="<?php echo e(asset('evisa/admin/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(asset('evisa/admin/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(asset('evisa/admin/assets/css/authentication/form-2.css')); ?>" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('evisa/admin/assets/css/forms/theme-checkbox-radio.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('evisa/admin/assets/css/forms/switches.css')); ?>">
 </head>
-<link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
 
-		
-	<body class="default-header">	    
-		<div class="login-img">
-			<div id="global-loader"></div>
-			<div class="page">
-				<div class="">
-					<div class="col col-login mx-auto">
-						<div class="text-center">
-                            <!-- <img src="<?php echo e(asset('log.png')); ?>" width="150px"/> -->
-						</div>
-					</div>
-					<div class="container-login100">
-						<div class="wrap-login100 p-6">
-							
-                            <form class="login100-form validate-form" method="POST" action="<?php echo e(route('login.admin')); ?>" aria-label="Login">
+<body class="form">
+
+    <!-- BEGIN LOADER -->
+    <div id="load_screen">
+        <div class="loader">
+            <div class="loader-content">
+                <div class="spinner-grow align-self-center"></div>
+            </div>
+        </div>
+    </div>
+    <!--  END LOADER -->
+
+    <div class="form-container outer">
+        <div class="form-form">
+            <div class="form-form-wrap">
+                <div class="form-container">
+                    <div class="form-content">
+                        <img src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" alt="admin-profile" class="img-fluid">
+                        <h1 class="">Connexion</h1>
+                        <p class="">Connectez-vous à votre compte pour continuer.</p>
+
+                        <form class="text-left" class="login100-form validate-form" method="POST" action="<?php echo e(route('login.admin')); ?>" aria-label="Login">
                                 <?php echo csrf_field(); ?>
-                                <span class="login100-form-title">
-									Connexion 
-								</span>
 
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                                <label>Email : </label>
-                                <input id="email"  type="text" class="form-control" name="email" value="" required autofocus>
-									<span class="focus-input100"></span>
-									<span class="symbol-input100">
-									</span>
-								</div>
-								<div class="wrap-input100 validate-input" data-validate = "Password is required">
-                                <label>Mot de passe: </label>
-                                <input id="password" type="password" class="form-control" name="password" required>
-										<span class="focus-input100"></span>
-									<span class="symbol-input100">
-									</span>
-								</div>
-								<div class="container-login100-form-btn">
-									<button type="submit" href="#" class="login100-form-btn btn-primary">
-                                        <i class="fa fa-door-open"></i>Connexion
-									</button>
-								</div>
-								<p>
-									Vous n'avez pas encore un comtpe ?
-									<a href="<?php echo e(route('register')); ?>"> S'enregistrer .</a>
+                        <div class="form">
 
-								</p>
-								<br>
-								<a href="<?php echo e(route('forget.password')); ?>">
-									Mot de passe Oublié ?
-								</a>
+                                <div id="username-field" class="field-wrapper input">
+                                    <label for="username">USERNAME</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    <input id="username" name="email" type="text" class="form-control" placeholder="">
+                                </div>
 
-							</form>
-						</div>
-					</div>
-					<!-- CONTAINER CLOSED -->
-				</div>
-			</div>
-		</div>
-		<!-- BACKGROUND-IMAGE CLOSED -->
-		
-		<!-- JQUERY SCRIPTS -->
-<script src="<?php echo e(asset('assets/js/vendors/jquery-3.2.1.min.js')); ?>"></script>
-<!-- BOOTSTRAP SCRIPTS -->
-<script src="<?php echo e(asset('assets/js/vendors/bootstrap.bundle.min.js')); ?>"></script>
-<!-- SPARKLINE -->
-<script src="<?php echo e(asset('assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')); ?>"></script>
-<!-- CUSTOM JS-->
-<script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
+                                <div id="password-field" class="field-wrapper input mb-2">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="password">MOT DE PASSE</label>
+                                        <a href="auth_pass_recovery_boxed.html" class="forgot-pass-link">Mot de passe oublié?</a>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                    <input id="password" name="password" type="password" class="form-control" placeholder="*******">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </div>
+                                <div class="d-sm-flex justify-content-between">
+                                    <div class="field-wrapper">
+                                        <button type="submit" class="btn btn-primary" value="">connexion</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
 
-<script src="<?php echo e(asset('assets/js/custom.js')); ?>"></script>	
-<script>
-        <?php if($errors->any()): ?>
-        $(function(){
-                toastr.error('<?php echo e($errors->first()); ?>')
-            })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <?php endif; ?>
-        <?php if(session('success')): ?>
-            toastr.success('<?php echo e(Session::get("success")); ?>')
-        <?php endif; ?>
-</script>
 
-	</body>
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="<?php echo e(asset('evisa/admin/assets/js/libs/jquery-3.1.1.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('evisa/admin/bootstrap/js/popper.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('evisa/admin/bootstrap/js/bootstrap.min.js')); ?>"></script>
+
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+    <script src="<?php echo e(asset('evisa/admin/assets/js/authentication/form-2.js')); ?>"></script>
+    <script>
+        var loaderElement = document.querySelector('#load_screen');
+        setTimeout(function() {
+            loaderElement.style.display = "none";
+        }, 3000);
+    </script>
+</body>
 
 </html>

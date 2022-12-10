@@ -117,6 +117,10 @@ Route::group(['prefix' => 'reglement','middleware' =>'lang', 'as' => 'reglement'
 
 Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], function () {
     Route::get('/', ['as' => '.index', 'uses' => 'DemandeController@index']);
+    
+    Route::get('/gr', ['as' => '.gr', 'uses' => 'DemandeController@gr']);
+    Route::get('/police', ['as' => '.police', 'uses' => 'DemandeController@police']);
+    
     Route::get('/create', ['as' => '.create', 'uses' => 'DemandeController@create']);
     Route::post('/store', ['as' => '.store', 'uses' => 'DemandeController@store']);
     Route::post('/update/{id_demande}', ['as' => '.update', 'uses' => 'DemandeController@update']);    
