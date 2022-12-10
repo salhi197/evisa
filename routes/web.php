@@ -22,19 +22,19 @@ Route::post('/login/police', 'Auth\LoginController@policeLogin')->name('login.po
 
 
 
-// Route::get('/cleareverything', function () {
-//     $clearcache = Artisan::call('cache:clear');
-//     echo "Cache cleared<br>";
+Route::get('/cleareverything', function () {
+    $clearcache = Artisan::call('cache:clear');
+    echo "Cache cleared<br>";
 
-//     $clearview = Artisan::call('view:clear');
-//     echo "View cleared<br>";
+    $clearview = Artisan::call('view:clear');
+    echo "View cleared<br>";
 
-//     $clearconfig = Artisan::call('config:cache');
-//     echo "Config cleared<br>";
+    $clearconfig = Artisan::call('config:cache');
+    echo "Config cleared<br>";
 
-//     $cleardebugbar = Artisan::call('debugbar:clear');
-//     echo "Debug Bar cleared<br>";
-// });
+    $cleardebugbar = Artisan::call('debugbar:clear');
+    echo "Debug Bar cleared<br>";
+});
 
 Route::get('/faq', function () {return view('faq');})->name('faq')->middleware('lang');
 Route::get('/support', function () {return view('support');})->name('support')->middleware('lang') ;
