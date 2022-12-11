@@ -414,9 +414,9 @@
                                             <h6>Passeport</h6>
                                             <label> <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
                                             <label class="custom-file-container__custom-file">
-                                                <input required type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
-                                                <input required type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                                <a href="#" class="btn btn-info">
+                                                    Télécharger
+                                                </a>
                                             </label>
                                             <div class="custom-file-container__image-preview"></div>
                                         </div>
