@@ -393,21 +393,21 @@
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Prénom Père</label>
-                                                <input required type="text" name="pere" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required type="text" value="{{$demande->pere ?? ''}}" name="pere" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Nom & Prénom Mère</label>
-                                                <input required type="text" name="nom_prenom_mere" class="form-control" id="inputPassword4" placeholder="">
+                                                <input required type="text" value="{{$demande->nom_prenom_mere ?? ''}}" name="nom_prenom_mere" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Date de Naissance Père</label>
-                                                <input required type="date" name="naissance_pere" class="form-control" id="inputEmail4" placeholder="">
+                                                <input required type="date" value="{{$demande->naissance_pere ?? ''}}" name="naissance_pere" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Date de Naissance Mère</label>
-                                                <input required type="date" class="form-control" name="naissance_mere" id="inputPassword4" placeholder="">
+                                                <input required type="date" class="form-control" value="{{$demande->naissance_mere ?? ''}}" name="naissance_mere" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="custom-file-container" data-upload-id="myFirstImage">
