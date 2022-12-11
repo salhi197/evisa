@@ -227,7 +227,7 @@
             <nav id="compactSidebar">
                 <ul class="menu-categories">
                     <li class="menu active">
-                        <a href="index.html" data-active="true" class="menu-toggle">
+                        <a href="<?php echo e(route('police')); ?>" data-active="true" class="menu-toggle">
                             <div class="base-menu">
                                 <div class="base-icons">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
@@ -324,31 +324,50 @@
                         <div class="widget-content widget-content-area br-6">
                             <div class="table-responsive mb-4 mt-4">
                                 <table id="zero-config" class="table table-hover" style="width:100%">
-                                    <thead>
+
+                                <thead>
                                         <tr>
                                             <th>Nom Prénom</th>
-                                            <th>Profil</th>
                                             <th>Pays</th>
                                             <th>N°Demande</th>
-                                            <th>Date de Naissance </th>
-                                            <th>Date de demande</th>
-                                            <th class="no-content">Action
+                                            <th>Date de naissance</th>
+                                            <th>Date de Demande</th>
+                                            <th>ETAT</th>
+                                            <th class="text-center dt-no-sorting">Action</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php $__currentLoopData = $demandes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $demande): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td><img src="assets/img/user1.png"></td>
-                                            <td>France</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>10/12/2022</td>
-                                            <td><img src="assets/img/accept.png"></td>
-                                            <td><img src="assets/img/remove.png"></td>
+                                            <td><?php echo e($demande->nom ?? ''); ?> <?php echo e($demande->prenom ?? ''); ?></td>
+                                            <td><?php echo e($demande->pays ?? ''); ?></td>
+                                            <td>Edinburgh</td>
+                                            <td><?php echo e($demande->naissance ?? ''); ?></td>
+                                            <td><?php echo e($demande->created_at ?? ''); ?></td>
+                                            <td>
+                                                <?php if($demande->gr): ?>
+                                                <span class="badge bage-info">Transféré à Gr</span>
+                                                <?php endif; ?>
+                                                <?php if($demande->police): ?>
+                                                <span class="badge bage-info">Transféré à Police</span>
+                                                <?php endif; ?>
 
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="<?php echo e(route('demande.accept.police',['demande'=>$demande->id])); ?>"
+                                                    class="btn btn-success btn-sm">Approuver</a>
+                                                <a href="<?php echo e(route('demande.edit',['demande'=>$demande->id])); ?>"
+                                                    class="btn btn-info btn-sm">Consulter</a>
+
+                                            </td>
                                         </tr>
-
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+
+
+                                    </tbody>
+
                                 </table>
                             </div>
                         </div>

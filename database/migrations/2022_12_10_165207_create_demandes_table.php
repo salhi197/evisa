@@ -26,9 +26,11 @@ class CreateDemandesTable extends Migration
             $table->string('situation');
             $table->string('pere');
             $table->string('nom_prenom_mere');
-            $table->longText('passport');
+            $table->longText('passport')->nullable(true);
             $table->date('naissance_pere');  
             $table->date('naissance_mere');  
+            $table->boolean('etat_police')->nullable();  
+            $table->boolean('etat_gr')->nullable();  
     
             $table->boolean('gr');  
             $table->boolean('police');  

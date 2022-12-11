@@ -128,7 +128,14 @@ Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], f
     Route::get('/edit/{id_demande}', ['as' => '.edit', 'uses' => 'DemandeController@edit']);
     Route::get('/view/{id_demande}', ['as' => '.view', 'uses' => 'DemandeController@view']);
     Route::get('/destroy/{id_demande}', ['as' => '.destroy', 'uses' => 'DemandeController@destroy']);
-            
+
+    Route::get('/send/gr/{id_demande}', ['as' => '.send.gr', 'uses' => 'DemandeController@sendGr']);
+    Route::get('/send/police/{id_demande}', ['as' => '.send.police', 'uses' => 'DemandeController@sendPolice']);
+
+    Route::get('/accept/gr/{id_demande}', ['as' => '.accept.gr', 'uses' => 'DemandeController@acceptGr']);
+    Route::get('/accept/police/{id_demande}', ['as' => '.accept.police', 'uses' => 'DemandeController@acceptPolice']);
+
+
 });
 
 Route::group(['prefix' => 'payment','middleware' =>'lang', 'as' => 'payment'], function () {

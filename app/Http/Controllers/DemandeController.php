@@ -13,6 +13,41 @@ class DemandeController extends Controller
         return view('demandes.index',compact('demandes'));
     }
 
+
+    public function acceptGr($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->etat_gr = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Inséré avec succés ');
+    }
+
+    public function acceptPolice($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->etat_police = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Inséré avec succés ');
+    }
+
+
+    public function sendGr($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->gr = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Inséré avec succés ');
+    }
+
+    public function sendPolice($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->police = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Inséré avec succés ');
+    }
+
+
     public function gr()
     {
         $demandes = Demande::where('gr',1)->get();
@@ -49,13 +84,17 @@ class DemandeController extends Controller
         $demande->adress = $request['adress'];
         $demande->situation = $request['situation'];
         $demande->pere = $request['pere'];
+
+        $demande->gr = false;;
+        $demande->police = false;;
+
         $demande->nom_prenom_mere = $request['nom_prenom_mere'];
         $demande->passport = $request['passport'];
         $demande->naissance_pere = $request['naissance_pere'];
         $demande->naissance_mere = $request['naissance_mere'];
 
         $demande->save();
-        return redirect()->route('demande.index')->with('success', 'Inséré avec succés ');
+        return redirect()->route('welcome')->with('success', 'Inséré avec succés ');
 
     }
 
@@ -112,6 +151,13 @@ class DemandeController extends Controller
 
     }
 
+    public function accept($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->gr = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Inséré avec succés ');
+    }
 
     public function destroy($demande)
     {

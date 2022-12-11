@@ -36,7 +36,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="{{asset('evisa/assets/img/90x90.jpg')}}"> <span class="navbar-brand-name">E-VISA</span></a>
+                <a class="navbar-brand" href="{{route('welcome')}}"><img alt="logo" src="{{asset('evisa/assets/img/90x90.jpg')}}"> <span class="navbar-brand-name">E-VISA</span></a>
             </div>
 
             <ul class="navbar-item topbar-navigation">
@@ -46,12 +46,12 @@
                     <nav id="topbar">
                         <ul class="navbar-nav theme-brand flex-row  text-center">
                             <li class="nav-item theme-logo">
-                                <a href="index.html">
+                                <a href="{{route('welcome')}}">
                                     <img src="{{asset('evisa/assets/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
                                 </a>
                             </li>
                             <li class="nav-item theme-text">
-                                <a href="index.html" class="nav-link"> E-VISA </a>
+                                <a href="{{route('welcome')}}" class="nav-link"> E-VISA </a>
                             </li>
                         </ul>
 
@@ -327,7 +327,7 @@
                                 <div class="widget-content widget-content-area">
                               
 
-                                    <form method="post" route="{{route('demande.store')}}">
+                                    <form method="post" action="{{route('demande.store')}}">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Nom</label>
@@ -374,16 +374,16 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress2"></label>
-                                            <input required name="" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                            <input required name="adress2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                                         </div>
                                         <h6>Informations Familialle</h6>
                                         <div class="form-group mb-4">
                                             <label for="inputState">Situation</label>
                                             <select id="inputState" name="situation" class="form-control">
                                                 <option selected>Choose...</option>
-                                                <option>Mariée</option>
-                                                <option>Célébataire</option>
-                                                <option>Divorcée</option>
+                                                <option value="Mariée">Mariée</option>
+                                                <option value="Célébataire">Célébataire</option>
+                                                <option value="Divorcée">Divorcée</option>
                                             </select>
                                         </div>
                                         <div class="form-row mb-4">

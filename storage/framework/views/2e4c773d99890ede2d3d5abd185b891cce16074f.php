@@ -327,7 +327,7 @@
                                 <div class="widget-content widget-content-area">
                               
 
-                                    <form method="post" route="<?php echo e(route('demande.store')); ?>">
+                                    <form method="post" action="<?php echo e(route('demande.store')); ?>">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Nom</label>
@@ -374,16 +374,16 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress2"></label>
-                                            <input required name="" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                            <input required name="adress2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                                         </div>
                                         <h6>Informations Familialle</h6>
                                         <div class="form-group mb-4">
                                             <label for="inputState">Situation</label>
                                             <select id="inputState" name="situation" class="form-control">
                                                 <option selected>Choose...</option>
-                                                <option>Mariée</option>
-                                                <option>Célébataire</option>
-                                                <option>Divorcée</option>
+                                                <option value="Mariée">Mariée</option>
+                                                <option value="Célébataire">Célébataire</option>
+                                                <option value="Divorcée">Divorcée</option>
                                             </select>
                                         </div>
                                         <div class="form-row mb-4">
