@@ -421,14 +421,14 @@
                                             <div class="custom-file-container__image-preview"></div>
                                         </div>
                                         <br>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="form-check pl-0">
                                                 <div class="custom-control custom-checkbox checkbox-info">
                                                     <input required type="checkbox" class="custom-control-input" id="gridCheck">
                                                     <label class="custom-control-label" for="gridCheck">Valider mes informations</label>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <button type="submit" class="btn btn-primary mt-3">Valider</button>
                                     </form>
