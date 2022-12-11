@@ -141,7 +141,7 @@ class DemandeController extends Controller
      * @param  \App\Demande  $demande
      * @return \Illuminate\Http\Response
      */
-    public function edit($demande)
+    public function edit($id_demande)
     {
         $demande = Demande::find($id_demande);
         // $demande->police = 1;
