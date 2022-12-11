@@ -10,6 +10,9 @@
     <link href="{{asset('evisa/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
     <script src="{{asset('evisa/assets/js/loader.js')}}"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="{{asset('css/toastr.css')}}" rel="stylesheet"/>
+
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{asset('evisa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('evisa/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
@@ -459,6 +462,21 @@
     <script src="{{asset('evisa/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('evisa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('evisa/assets/js/app.js')}}"></script>
+    <script src="{{asset('js/toastr.min.js')}}"></script>	
+
+    <script>
+        @if(session('error'))
+        	$(function(){
+                toastr.error('{{Session::get("error")}}')
+            })
+
+        @endif
+        @if(session('success'))
+            toastr.success('{{Session::get("success")}}')
+        @endif
+            
+
+        </script>
 
     <script>
         $(document).ready(function() {
