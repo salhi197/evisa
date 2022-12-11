@@ -10,6 +10,8 @@
     <link href="{{asset('evisa/admin/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
     <script src="{{asset('evisa/admin/assets/js/loader.js')}}"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="{{asset('css/toastr.css')}}" rel="stylesheet"/>
+
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{asset('evisa/admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('evisa/admin/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
@@ -406,13 +408,13 @@
 
                                         </td>
                                         <td class="text-center">
-                                            @if(!$demande->gr)
-                                            <a href="{{route('demande.send.gr',['demande'=>$demande->id])}}" class="btn btn-success btn-sm">Transfert Gr</a>
+                                            @if(!$demande->gr and !$demande->police)
+                                                <a href="{{route('demande.send',['demande'=>$demande->id])}}" class="btn btn-success btn-sm">Transférer</a>
                                             @endif
-                                            @if(!$demande->police)
-                                            <a href="{{route('demande.send.police',['demande'=>$demande->id])}}" class="btn btn-primary btn-sm">Transfert Police</a>
-                                            @endif
+
+                                            <!-- <a href="{{route('demande.send.police',['demande'=>$demande->id])}}" class="btn btn-primary btn-sm">Transfert Police</a> -->
                                             <a href="{{route('demande.edit',['demande'=>$demande->id])}}" class="btn btn-info btn-sm">Consulter</a>
+                                            <a href="{{route('demande.destroy',['demande'=>$demande->id])}}" class="btn btn-warning btn-sm">Supprimer</a>
 
                                         </td>
                                     </tr>                                    
@@ -457,6 +459,22 @@
             App.init();
         });
     </script>
+    <script src="{{asset('js/toastr.min.js')}}"></script>	
+
+
+    <script>
+        @if(session('error'))
+        	$(function(){
+                toastr.error('{{Session::get("error")}}')
+            })
+
+        @endif
+        @if(session('success'))
+            toastr.success('{{Session::get("success")}}')
+        @endif
+
+    </script>
+
     <script src="{{asset('evisa/admin/assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 

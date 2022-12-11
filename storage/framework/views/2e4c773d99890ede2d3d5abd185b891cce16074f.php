@@ -10,6 +10,9 @@
     <link href="<?php echo e(asset('evisa/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo e(asset('evisa/assets/js/loader.js')); ?>"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
+
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo e(asset('evisa/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo e(asset('evisa/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
@@ -36,7 +39,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo e(asset('evisa/assets/img/90x90.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
+                <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>"><img alt="logo" src="<?php echo e(asset('evisa/assets/img/90x90.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
             </div>
 
             <ul class="navbar-item topbar-navigation">
@@ -46,12 +49,12 @@
                     <nav id="topbar">
                         <ul class="navbar-nav theme-brand flex-row  text-center">
                             <li class="nav-item theme-logo">
-                                <a href="index.html">
+                                <a href="<?php echo e(route('welcome')); ?>">
                                     <img src="<?php echo e(asset('evisa/assets/img/90x90.jpg')); ?>" class="navbar-logo" alt="logo">
                                 </a>
                             </li>
                             <li class="nav-item theme-text">
-                                <a href="index.html" class="nav-link"> E-VISA </a>
+                                <a href="<?php echo e(route('welcome')); ?>" class="nav-link"> E-VISA </a>
                             </li>
                         </ul>
 
@@ -327,6 +330,7 @@
                                 <div class="widget-content widget-content-area">
                               
 
+                                
                                     <form method="post" action="<?php echo e(route('demande.store')); ?>">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
@@ -459,6 +463,21 @@
     <script src="<?php echo e(asset('evisa/bootstrap/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('evisa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('evisa/assets/js/app.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
+
+    <script>
+        <?php if(session('error')): ?>
+        	$(function(){
+                toastr.error('<?php echo e(Session::get("error")); ?>')
+            })
+
+        <?php endif; ?>
+        <?php if(session('success')): ?>
+            toastr.success('<?php echo e(Session::get("success")); ?>')
+        <?php endif; ?>
+            
+
+        </script>
 
     <script>
         $(document).ready(function() {

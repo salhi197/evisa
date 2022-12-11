@@ -345,9 +345,9 @@
                                             <td><?php echo e($demande->naissance ?? ''); ?></td>
                                             <td><?php echo e($demande->created_at ?? ''); ?></td>
                                             <td>
-                                                <?php if($demande->gr): ?>
+                                                <!-- <?php if($demande->gr): ?>
                                                 <span class="badge bage-info">Transféré à Gr</span>
-                                                <?php endif; ?>
+                                                <?php endif; ?> -->
                                                 <?php if($demande->police): ?>
                                                 <span class="badge bage-info">Transféré à Police</span>
                                                 <?php endif; ?>

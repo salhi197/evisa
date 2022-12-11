@@ -10,6 +10,8 @@
     <link href="<?php echo e(asset('evisa/admin/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo e(asset('evisa/admin/assets/js/loader.js')); ?>"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
+
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo e(asset('evisa/admin/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo e(asset('evisa/admin/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
@@ -40,7 +42,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
+                <a class="navbar-brand" href="<?php echo e(route('admin')); ?>"><img alt="logo" src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
             </div>
 
             <ul class="navbar-item topbar-navigation">
@@ -395,19 +397,24 @@
                                             <?php if($demande->police): ?>
                                             <span class="badge bage-info">Transféré à Police</span>
                                             <?php endif; ?>
-                                            <?php if(!$demande->police and !$demande->police): ?>
-                                            <span class="badge bage-info">En cours</span>
+
+                                            <?php if($demande->etat_gr): ?>
+                                                <span class="badge bage-info">Accepté par Gr</span>
                                             <?php endif; ?>
+                                            <?php if($demande->etat_police): ?>
+                                            <span class="badge bage-info">Accepté par Police</span>
+                                            <?php endif; ?>
+                                            
 
                                         </td>
                                         <td class="text-center">
-                                            <?php if(!$demande->gr): ?>
-                                            <a href="<?php echo e(route('demande.send.gr',['demande'=>$demande->id])); ?>" class="btn btn-success btn-sm">Transfert Gr</a>
+                                            <?php if(!$demande->gr and !$demande->police): ?>
+                                                <a href="<?php echo e(route('demande.send',['demande'=>$demande->id])); ?>" class="btn btn-success btn-sm">Transférer</a>
                                             <?php endif; ?>
-                                            <?php if(!$demande->police): ?>
-                                            <a href="<?php echo e(route('demande.send.police',['demande'=>$demande->id])); ?>" class="btn btn-primary btn-sm">Transfert Police</a>
-                                            <?php endif; ?>
+
+                                            <!-- <a href="<?php echo e(route('demande.send.police',['demande'=>$demande->id])); ?>" class="btn btn-primary btn-sm">Transfert Police</a> -->
                                             <a href="<?php echo e(route('demande.edit',['demande'=>$demande->id])); ?>" class="btn btn-info btn-sm">Consulter</a>
+                                            <a href="<?php echo e(route('demande.destroy',['demande'=>$demande->id])); ?>" class="btn btn-warning btn-sm">Supprimer</a>
 
                                         </td>
                                     </tr>                                    
@@ -452,6 +459,22 @@
             App.init();
         });
     </script>
+    <script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
+
+
+    <script>
+        <?php if(session('error')): ?>
+        	$(function(){
+                toastr.error('<?php echo e(Session::get("error")); ?>')
+            })
+
+        <?php endif; ?>
+        <?php if(session('success')): ?>
+            toastr.success('<?php echo e(Session::get("success")); ?>')
+        <?php endif; ?>
+
+    </script>
+
     <script src="<?php echo e(asset('evisa/admin/assets/js/custom.js')); ?>"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 

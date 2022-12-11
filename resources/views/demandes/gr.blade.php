@@ -492,9 +492,9 @@
                                                 @if($demande->gr)
                                                 <span class="badge bage-info">Transféré à Gr</span>
                                                 @endif
-                                                @if($demande->police)
+                                                <!-- @if($demande->police)
                                                 <span class="badge bage-info">Transféré à Police</span>
-                                                @endif
+                                                @endif -->
 
                                             </td>
                                             <td class="text-center">

@@ -31,6 +31,16 @@ class DemandeController extends Controller
     }
 
 
+    public function send($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->gr = 1;
+        $demande->police = 1;
+        $demande->save();
+        return redirect()->back()->with('success', 'Envoyé avec succés ');
+    }
+
+
     public function sendGr($id_demande)
     {
         $demande = Demande::find($id_demande);

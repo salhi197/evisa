@@ -345,9 +345,9 @@
                                             <td>{{$demande->naissance ?? ''}}</td>
                                             <td>{{$demande->created_at ?? ''}}</td>
                                             <td>
-                                                @if($demande->gr)
+                                                <!-- @if($demande->gr)
                                                 <span class="badge bage-info">Transféré à Gr</span>
-                                                @endif
+                                                @endif -->
                                                 @if($demande->police)
                                                 <span class="badge bage-info">Transféré à Police</span>
                                                 @endif

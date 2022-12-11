@@ -129,6 +129,9 @@ Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], f
     Route::get('/view/{id_demande}', ['as' => '.view', 'uses' => 'DemandeController@view']);
     Route::get('/destroy/{id_demande}', ['as' => '.destroy', 'uses' => 'DemandeController@destroy']);
 
+    Route::get('/send/{id_demande}', ['as' => '.send', 'uses' => 'DemandeController@send']);
+
+
     Route::get('/send/gr/{id_demande}', ['as' => '.send.gr', 'uses' => 'DemandeController@sendGr']);
     Route::get('/send/police/{id_demande}', ['as' => '.send.police', 'uses' => 'DemandeController@sendPolice']);
 

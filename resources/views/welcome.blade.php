@@ -330,6 +330,7 @@
                                 <div class="widget-content widget-content-area">
                               
 
+                                
                                     <form method="post" action="{{route('demande.store')}}">
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
