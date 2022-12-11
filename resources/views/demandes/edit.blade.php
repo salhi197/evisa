@@ -5,25 +5,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Ministere de Tourisme</title>
-    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" />
-    <link href="<?php echo e(asset('evisa/admin/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
-    <script src="<?php echo e(asset('evisa/admin/assets/js/loader.js')); ?>"></script>
+    <title>CORK Admin Template - Forms Layouts</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('evisa/assets/img/favicon.ico')}}" />
+    <link href="{{asset('evisa/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('evisa/assets/js/loader.js')}}"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
+
+    <link href="{{asset('css/toastr.css')}}" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="<?php echo e(asset('evisa/admin/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo e(asset('evisa/admin/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="{{asset('evisa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('evisa/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
-
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('evisa/adminplugins/table/datatable/datatables.css')); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('evisa/adminplugins/table/datatable/dt-global_style.css')); ?>">
-    <!-- END PAGE LEVEL STYLES -->
+    <link href="{{asset('evisa/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="sidebar-noneoverflow">
+<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="100">
 
     <!-- BEGIN LOADER -->
     <div id="load_screen">
@@ -42,7 +39,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="<?php echo e(route('admin')); ?>"><img alt="logo" src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
+                <a class="navbar-brand" href="{{route('welcome')}}"><img alt="logo" src="{{asset('evisa/assets/img/90x90.jpg')}}"> <span class="navbar-brand-name">E-VISA</span></a>
             </div>
 
             <ul class="navbar-item topbar-navigation">
@@ -52,92 +49,28 @@
                     <nav id="topbar">
                         <ul class="navbar-nav theme-brand flex-row  text-center">
                             <li class="nav-item theme-logo">
-                                <a href="index.html">
-                                    <img src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" class="navbar-logo" alt="logo">
+                                <a href="{{route('welcome')}}">
+                                    <img src="{{asset('evisa/assets/img/90x90.jpg')}}" class="navbar-logo" alt="logo">
                                 </a>
                             </li>
                             <li class="nav-item theme-text">
-                                <a href="index.html" class="nav-link"> CORK </a>
+                                <a href="{{route('welcome')}}" class="nav-link"> E-VISA </a>
                             </li>
                         </ul>
 
                         <ul class="list-unstyled menu-categories" id="topAccordion">
-
-                            <li class="menu single-menu     ">
-                                <a href="<?php echo e(route('admin')); ?>" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle ">
+                            <li class="menu single-menu active">
+                                <a href="#forms" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                                     <div class="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
 
-                                        <span>Tableau de Board</span>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                </a>
-                            </li>
-                            <li class="menu single-menu">
-                                <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                                    <div class="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-
-                                        <span>Historiques</span>
+                                        <span>Demande VISA</span>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
 
                             </li>
 
-                            <li class="menu">
-                                <a href="<?php echo e(route('demande.index')); ?>">
-                                    <div class="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-
-                                        <span>Liste des Demandes</span>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                </a>
-                                <ul class="collapse submenu list-unstyled animated fadeInUp" id="tables" data-parent="#topAccordion">
-
-                                    <!--
-                                    <li class="sub-sub-submenu-list">
-                                        <a href="#datatable" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> DataTables <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                        <ul class="collapse list-unstyled sub-submenu animated fadeInUp" id="datatable" data-parent="#datatable">
-                                            <li>
-                                                <a href="table_dt_basic.html"> Basic </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_striped_table.html"> Striped Table </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_ordering_sorting.html"> Order Sorting </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_multi-column_ordering.html"> Multi-Column </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_multiple_tables.html"> Multiple Tables</a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_alternative_pagination.html"> Alt. Pagination</a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_custom.html"> Custom </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_range_search.html"> Range Search </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_html5.html"> HTML5 Export </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_live_dom_ordering.html"> Live DOM ordering </a>
-                                            </li>
-                                            <li>
-                                                <a href="table_dt_miscellaneous.html"> Miscellaneous </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    -->
-                                </ul>
-                            </li>
 
                         </ul>
                     </nav>
@@ -151,7 +84,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <form class="form-inline search-full form-inline search" role="search">
                         <div class="search-bar">
-                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
+                            <input required type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
                         </div>
                     </form>
                 </li>
@@ -159,7 +92,21 @@
 
             <ul class="navbar-item flex-row nav-dropdowns">
                 <li class="nav-item dropdown language-dropdown more-dropdown">
+                    <div class="dropdown custom-dropdown-icon">
+                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
+                            <div class="search-dropdown">
+                                <input required type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"> German</a>
+                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"> Japanese</a>
+                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"> French</a>
+                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"> English</a>
+                        </div>
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown message-dropdown">
@@ -178,7 +125,8 @@
                                     <div class="media">
                                         <div class="user-img">
                                             <div class="avatar avatar-xl">
-                                                <img src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" alt="admin-profile">
+                                                <!-- <span class="avatar-title rounded-circle">KY</span> -->
+                                                <img src="{{asset('evisa/assets/img/90x90.jpg')}}" alt="admin-profile">
                                             </div>
                                         </div>
                                         <div class="media-body">
@@ -214,7 +162,8 @@
                                     <div class="media">
                                         <div class="user-img">
                                             <div class="avatar avatar-xl">
-                                                <img src="<?php echo e(asset('evisa/admin/assets/img/90x90.jpg')); ?>" alt="admin-profile">
+                                                <!-- <span class="avatar-title rounded-circle">OG</span> -->
+                                                <img src="{{asset('evisa/assets/img/90x90.jpg')}}" alt="admin-profile">
                                             </div>
                                         </div>
                                         <div class="media-body">
@@ -293,7 +242,7 @@
                 <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media">
-                            <img src="<?php echo e(asset('evisa/admin/assets/img/logo.jpg')); ?>" class="img-fluid" alt="admin-profile">
+                            <img src="{{asset('evisa/assets/img/90x90.jpg')}}" class="img-fluid" alt="admin-profile">
                         </div>
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
@@ -341,181 +290,203 @@
 
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
-            <div class="layout-px-spacing">
+            <div class="page-header page-header-scrollspy">
+                <nav class="breadcrumb-one" aria-label="breadcrumb">
+                    <div class="title">
+                        <h3>Formulaire</h3>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Demande VISA</a></li>
+                    </ol>
+                </nav>
 
-                <div class="page-header">
-                    <nav class="breadcrumb-one" aria-label="breadcrumb">
-                        <div class="title">
-                            <h3>Liste des Demandes</h3>
-                        </div>
-                        <ol class="breadcrumb">
-                        </ol>
-                    </nav>
-
-                    <div class="toggle-switch">
-                        <label class="switch s-icons s-outline  s-outline-secondary">
-                            <input type="checkbox" checked="" class="theme-shifter">
+                <div class="toggle-switch">
+                    <label class="switch s-icons s-outline  s-outline-secondary">
+                            <input required type="checkbox" checked="" class="theme-shifter">
                             <span class="slider round">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                             </span>
                         </label>
-                    </div>
-
                 </div>
 
-                <div class="row layout-top-spacing" id="cancel-row">
+            </div>
 
-                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-                        <div class="widget-content widget-content-area br-6">
-                            <table id="default-ordering" class="table table-hover" style="width:100%">
+            <div class="container">
+                <div class="container">
 
-                            <thead>
-                                    <tr>
-                                        <th>Nom Prénom</th>
-                                        <th>Pays</th>
-                                        <th>N°Demande</th>
-                                        <th>Date de naissance</th>
-                                        <th>Date de Demande</th>
-                                        <th>ETAT</th>
-                                        <th class="text-center dt-no-sorting">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $__currentLoopData = $demandes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $demande): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td><?php echo e($demande->nom ?? ''); ?> <?php echo e($demande->prenom ?? ''); ?></td>
-                                        <td><?php echo e($demande->pays ?? ''); ?></td>
-                                        <td>Edinburgh</td>
-                                        <td><?php echo e($demande->naissance ?? ''); ?></td>
-                                        <td><?php echo e($demande->created_at ?? ''); ?></td>
-                                        <td>
-                                            <?php if($demande->gr): ?>
-                                                <span class="badge bage-info">Transféré à Gr</span>
-                                            <?php endif; ?>
-                                            <?php if($demande->police): ?>
-                                            <span class="badge bage-info">Transféré à Police</span>
-                                            <?php endif; ?>
+                    <div class="row">
+                        <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>Informations Personnel
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                              
 
+                                
+                                    <form method="post" action="{{route('demande.store')}}">
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Nom</label>
+                                                <input value="{{$demande->nom ?? ''}}" required name="nom" type="text" class="form-control" id="inputEmail4" placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Prénom</label>
+                                                <input value="{{$demande->prenom ?? ''}}" required name="prenom" type="text" class="form-control" id="inputPassword4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Date de Naissance</label>
+                                                <input value="{{$demande->naissance ?? ''}}" required name="naissance" type="date" class="form-control" id="inputEmail4" placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Lieu de Naissance</label>
+                                                <input value="{{$demande->lieu ?? ''}}" required name="lieu" type="text" class="form-control" id="inputPassword4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">N°Téléphone</label>
+                                                <input value="{{$demande->telephone ?? ''}}" required name="telephone" type="text" class="form-control" id="inputEmail4" placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Email</label>
+                                                <input value="{{$demande->email ?? ''}}" required name="email" type="email" class="form-control" id="inputPassword4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputCity">Pays</label>
+                                                <input value="{{$demande->pays ?? ''}}" required name="pays" type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Région</label>
+                                                <input value="{{$demande->region ?? ''}}" required name="region" type="text" class="form-control" id="inputCity">
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="inputAddress">Addresse</label>
+                                            <input value="{{$demande->adress ?? ''}}" required name="adress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="inputAddress2"></label>
+                                            <input value="{{$demande->adress2 ?? ''}}" required name="adress2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                        </div>
+                                        <h6>Informations Familialle</h6>
+                                        <div class="form-group mb-4">
+                                            <label for="inputState">Situation</label>
+                                            <select id="inputState" name="situation" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option value="Mariée">Mariée</option>
+                                                <option value="Célébataire">Célébataire</option>
+                                                <option value="Divorcée">Divorcée</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Prénom Père</label>
+                                                <input required type="text" name="pere" class="form-control" id="inputEmail4" placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Nom & Prénom Mère</label>
+                                                <input required type="text" name="nom_prenom_mere" class="form-control" id="inputPassword4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Date de Naissance Père</label>
+                                                <input required type="date" name="naissance_pere" class="form-control" id="inputEmail4" placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Date de Naissance Mère</label>
+                                                <input required type="date" class="form-control" name="naissance_mere" id="inputPassword4" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="custom-file-container" data-upload-id="myFirstImage">
+                                            <h6>Passeport</h6>
+                                            <label> <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file">
+                                                <input required type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
+                                                <input required type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <div class="form-check pl-0">
+                                                <div class="custom-control custom-checkbox checkbox-info">
+                                                    <input required type="checkbox" class="custom-control-input" id="gridCheck">
+                                                    <label class="custom-control-label" for="gridCheck">Valider mes informations</label>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                            <?php if(!$demande->etat_gr): ?>
-                                                <span class="badge bage-warning">Refusé à Gr</span>
-                                            <?php endif; ?>
-                                            <?php if(!$demande->etat_police): ?>
-                                            <span class="badge bage-warning">Refusé à Police</span>
-                                            <?php endif; ?>
-
-
-                                            <?php if($demande->etat_gr): ?>
-                                                <span class="badge bage-info">Accepté par Gr</span>
-                                            <?php endif; ?>
-                                            <?php if($demande->etat_police): ?>
-                                            <span class="badge bage-info">Accepté par Police</span>
-                                            <?php endif; ?>
-                                            
-
-                                        </td>
-                                        <td class="text-center">
-                                            <?php if(!$demande->gr and !$demande->police): ?>
-                                                <a href="<?php echo e(route('demande.send',['demande'=>$demande->id])); ?>" class="btn btn-success btn-sm">Transférer</a>
-                                            <?php endif; ?>
-
-                                            <!-- <a href="<?php echo e(route('demande.send.police',['demande'=>$demande->id])); ?>" class="btn btn-primary btn-sm">Transfert Police</a> -->
-                                            <a href="<?php echo e(route('demande.edit',['demande'=>$demande->id])); ?>" class="btn btn-info btn-sm">Consulter</a>
-                                            <a href="<?php echo e(route('demande.destroy',['demande'=>$demande->id])); ?>" class="btn btn-warning btn-sm">Supprimer</a>
-
-                                        </td>
-                                    </tr>                                    
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-
-                                </tbody>                            
-
-                            </table>
+                                        <button type="submit" class="btn btn-primary mt-3">Valider</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-
-            </div>
-            <div class="footer-wrapper">
-                <div class="footer-section f-section-1">
-                    <p class="">Copyright © 2021 <a target="_blank" href="https://designreset.com">Ministere de Tourisme</a>, All rights reserved.</p>
-                </div>
-                <div class="footer-section f-section-2">
                 </div>
             </div>
+
+
+
+
         </div>
-        <!--  END CONTENT AREA  -->
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer-section f-section-1">
+            <p class="">Copyright © 2021 <a target="_blank" href="https://designreset.com">E-VISA</a>, All rights reserved.</p>
+        </div>
+        <div class="footer-section f-section-2">
+        </div>
+    </div>
+    </div>
+    <!--  END CONTENT AREA  -->
 
     </div>
     <!-- END MAIN CONTAINER -->
 
-
-
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="<?php echo e(asset('evisa/admin/assets/js/libs/jquery-3.1.1.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('evisa/admin/bootstrap/js/popper.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('evisa/admin/bootstrap/js/bootstrap.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('evisa/admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('evisa/admin/assets/js/app.js')); ?>"></script>
+    <script src="{{asset('evisa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('evisa/bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset('evisa/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('evisa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('evisa/assets/js/app.js')}}"></script>
+    <script src="{{asset('js/toastr.min.js')}}"></script>	
+
+    <script>
+        @if(session('error'))
+        	$(function(){
+                toastr.error('{{Session::get("error")}}')
+            })
+
+        @endif
+        @if(session('success'))
+            toastr.success('{{Session::get("success")}}')
+        @endif
+            
+
+    </script>
 
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
-    <script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
-
-
-    <script>
-        <?php if(session('error')): ?>
-        	$(function(){
-                toastr.error('<?php echo e(Session::get("error")); ?>')
-            })
-
-        <?php endif; ?>
-        <?php if(session('success')): ?>
-            toastr.success('<?php echo e(Session::get("success")); ?>')
-        <?php endif; ?>
-
-    </script>
-
-    <script src="<?php echo e(asset('evisa/admin/assets/js/custom.js')); ?>"></script>
+    <script src="{{asset('evisa/plugins/highlight/highlight.pack.js')}}"></script>
+    <script src="{{asset('evisa/assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
-
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="<?php echo e(asset('evisa/admin/plugins/table/datatable/datatables.js')); ?>"></script>
-    <script>
-        $('#default-ordering').DataTable({
-            "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
-                "<'table-responsive'tr>" +
-                "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
-            "oLanguage": {
-                "oPaginate": {
-                    "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
-                    "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
-                },
-                "sInfo": "Showing page _PAGE_ of _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                "sSearchPlaceholder": "Search...",
-                "sLengthMenu": "Results :  _MENU_",
-            },
-            "order": [
-                [3, "desc"]
-            ],
-            "stripeClasses": [],
-            "lengthMenu": [7, 10, 20, 50],
-            "pageLength": 7,
-            drawCallback: function() {
-                $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered');
-            }
-        });
-    </script>
-    <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 
 </html>

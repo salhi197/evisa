@@ -143,7 +143,12 @@ class DemandeController extends Controller
      */
     public function edit($demande)
     {
-        //
+        $demande = Demande::find($id_demande);
+        // $demande->police = 1;
+        // $demande->save();
+        return view('demandes.edit',compact('demande'));
+        // return redirect()->back()->with('success', 'Inséré avec succés ');
+       
     }
 
     /**

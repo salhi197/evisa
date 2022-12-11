@@ -398,6 +398,15 @@
                                             <span class="badge bage-info">Transféré à Police</span>
                                             @endif
 
+
+                                            @if(!$demande->etat_gr)
+                                                <span class="badge bage-warning">Refusé à Gr</span>
+                                            @endif
+                                            @if(!$demande->etat_police)
+                                            <span class="badge bage-warning">Refusé à Police</span>
+                                            @endif
+
+
                                             @if($demande->etat_gr)
                                                 <span class="badge bage-info">Accepté par Gr</span>
                                             @endif
