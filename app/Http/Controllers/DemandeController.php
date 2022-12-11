@@ -19,7 +19,7 @@ class DemandeController extends Controller
         $demande = Demande::find($id_demande);
         $demande->etat_gr = 1;
         $demande->save();
-        return redirect()->back()->with('success', 'Inséré avec succés ');
+        return redirect()->back()->with('success', 'Demande Acceptée');
     }
 
     public function acceptPolice($id_demande)
@@ -27,7 +27,7 @@ class DemandeController extends Controller
         $demande = Demande::find($id_demande);
         $demande->etat_police = 1;
         $demande->save();
-        return redirect()->back()->with('success', 'Inséré avec succés ');
+        return redirect()->back()->with('success', 'Demande Acceptée');
     }
 
 
@@ -166,11 +166,14 @@ class DemandeController extends Controller
         $demande = Demande::find($id_demande);
         $demande->gr = 1;
         $demande->save();
-        return redirect()->back()->with('success', 'Inséré avec succés ');
+        return redirect()->back()->with('success', 'Demande Acceptée  ');
     }
 
-    public function destroy($demande)
+    public function destroy($id_demande)
     {
-        //
+        $demande = Demande::find($id_demande);
+        // $demande->gr = 1;
+        $demande->delete();
+        return redirect()->back()->with('success', 'Demande Supprimée  ');        
     }
 }
