@@ -30,6 +30,22 @@ class DemandeController extends Controller
         return redirect()->back()->with('success', 'Demande Acceptée');
     }
 
+    public function RejectGr($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->etat_gr = 0;
+        $demande->save();
+        return redirect()->back()->with('success', 'Demande Acceptée');
+    }
+
+    public function RejectPolice($id_demande)
+    {
+        $demande = Demande::find($id_demande);
+        $demande->etat_police = 0;
+        $demande->save();
+        return redirect()->back()->with('success', 'Demande Acceptée');
+    }    
+
 
     public function send($id_demande)
     {

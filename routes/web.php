@@ -138,6 +138,9 @@ Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], f
     Route::get('/accept/gr/{id_demande}', ['as' => '.accept.gr', 'uses' => 'DemandeController@acceptGr']);
     Route::get('/accept/police/{id_demande}', ['as' => '.accept.police', 'uses' => 'DemandeController@acceptPolice']);
 
+    Route::get('/reject/gr/{id_demande}', ['as' => '.reject.gr', 'uses' => 'DemandeController@rejectGr']);
+    Route::get('/reject/police/{id_demande}', ['as' => '.reject.police', 'uses' => 'DemandeController@rejectPolice']);
+
 
 });
 

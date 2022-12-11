@@ -498,6 +498,9 @@
 
                                             </td>
                                             <td class="text-center">
+                                                <a href="{{route('demande.reject.gr',['demande'=>$demande->id])}}"
+                                                    class="btn btn-warning btn-sm">Rejeter</a>
+
                                                 <a href="{{route('demande.accept.gr',['demande'=>$demande->id])}}"
                                                     class="btn btn-success btn-sm">Approuver</a>
                                                 <a href="{{route('demande.edit',['demande'=>$demande->id])}}"
