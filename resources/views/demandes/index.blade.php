@@ -400,10 +400,10 @@
 
 
                                             @if(!$demande->etat_gr)
-                                                <span class="badge bage-warning">Refusé à Gr</span>
+                                                <span class="badge bage-warning">Refusé par Gr</span>
                                             @endif
                                             @if(!$demande->etat_police)
-                                            <span class="badge bage-warning">Refusé à Police</span>
+                                            <span class="badge bage-warning">Refusé par Police</span>
                                             @endif
 
 
