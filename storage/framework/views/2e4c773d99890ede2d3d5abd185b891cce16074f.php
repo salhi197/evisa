@@ -5,14 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>CORK Admin Template - Forms Layouts</title>
-    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('evisa/assets/img/favicon.ico')); ?>" />
+    <title>Formulaire demande VISA</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo e(asset('evisa/assets/img/logo.jpg')); ?>" />
     <link href="<?php echo e(asset('evisa/assets/css/loader.css')); ?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo e(asset('evisa/assets/js/loader.js')); ?>"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-
-    <link href="<?php echo e(asset('css/toastr.css')); ?>" rel="stylesheet"/>
-
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo e(asset('evisa/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo e(asset('evisa/assets/css/plugins.css')); ?>" rel="stylesheet" type="text/css" />
@@ -39,7 +36,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>"><img alt="logo" src="<?php echo e(asset('evisa/assets/img/90x90.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
+                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo e(asset('evisa/assets/img/logo.jpg')); ?>"> <span class="navbar-brand-name">E-VISA</span></a>
             </div>
 
             <ul class="navbar-item topbar-navigation">
@@ -49,12 +46,12 @@
                     <nav id="topbar">
                         <ul class="navbar-nav theme-brand flex-row  text-center">
                             <li class="nav-item theme-logo">
-                                <a href="<?php echo e(route('welcome')); ?>">
-                                    <img src="<?php echo e(asset('evisa/assets/img/90x90.jpg')); ?>" class="navbar-logo" alt="logo">
+                                <a href="index.html">
+                                    <img src="<?php echo e(asset('evisa/assets/img/logo.jpg')); ?>" class="navbar-logo" alt="logo">
                                 </a>
                             </li>
                             <li class="nav-item theme-text">
-                                <a href="<?php echo e(route('welcome')); ?>" class="nav-link"> E-VISA </a>
+                                <a href="index.html" class="nav-link"> E-VISA </a>
                             </li>
                         </ul>
 
@@ -69,23 +66,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
 
-
-
                             </li>
-                            <li class="menu single-menu active">
-                                <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
-                                    <div class="">
-                                        <span>Déconnexion</span>
-                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                            <?php echo e(csrf_field()); ?>
 
-                                        </form>                                
-
-                                    </div>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                </a>
-                            </li>
 
                         </ul>
                     </nav>
@@ -99,7 +81,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <form class="form-inline search-full form-inline search" role="search">
                         <div class="search-bar">
-                            <input required type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
+                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
                         </div>
                     </form>
                 </li>
@@ -107,21 +89,7 @@
 
             <ul class="navbar-item flex-row nav-dropdowns">
                 <li class="nav-item dropdown language-dropdown more-dropdown">
-                    <div class="dropdown custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                            <div class="search-dropdown">
-                                <input required type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <a class="dropdown-item" data-img-value="de" data-value="de" href="javascript:void(0);"> German</a>
-                            <a class="dropdown-item" data-img-value="jp" data-value="jp" href="javascript:void(0);"> Japanese</a>
-                            <a class="dropdown-item" data-img-value="fr" data-value="fr" href="javascript:void(0);"> French</a>
-                            <a class="dropdown-item" data-img-value="ca" data-value="en" href="javascript:void(0);"> English</a>
-                        </div>
-                    </div>
                 </li>
 
                 <li class="nav-item dropdown message-dropdown">
@@ -317,7 +285,7 @@
 
                 <div class="toggle-switch">
                     <label class="switch s-icons s-outline  s-outline-secondary">
-                            <input required type="checkbox" checked="" class="theme-shifter">
+                            <input type="checkbox" checked="" class="theme-shifter">
                             <span class="slider round">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 
@@ -343,94 +311,91 @@
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
-                              
-
-                                
-                                    <form method="post" action="<?php echo e(route('demande.store')); ?>">
+                                    <form>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Nom</label>
-                                                <input required name="nom" type="text" class="form-control" id="inputEmail4" placeholder="">
+                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Prénom</label>
-                                                <input required name="prenom" type="text" class="form-control" id="inputPassword4" placeholder="">
+                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Date de Naissance</label>
-                                                <input required name="naissance" type="date" class="form-control" id="inputEmail4" placeholder="">
+                                                <input type="date" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Lieu de Naissance</label>
-                                                <input required name="lieu" type="text" class="form-control" id="inputPassword4" placeholder="">
+                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">N°Téléphone</label>
-                                                <input required name="telephone" type="text" class="form-control" id="inputEmail4" placeholder="">
+                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Email</label>
-                                                <input required name="email" type="email" class="form-control" id="inputPassword4" placeholder="">
+                                                <input type="email" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputCity">Pays</label>
-                                                <input required name="pays" type="text" class="form-control" id="inputCity">
+                                                <input type="text" class="form-control" id="inputCity">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputState">Région</label>
-                                                <input required name="region" type="text" class="form-control" id="inputCity">
+                                                <input type="text" class="form-control" id="inputCity">
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress">Addresse</label>
-                                            <input required name="adress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputAddress2"></label>
-                                            <input required name="adress2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                                         </div>
                                         <h6>Informations Familialle</h6>
                                         <div class="form-group mb-4">
                                             <label for="inputState">Situation</label>
-                                            <select id="inputState" name="situation" class="form-control">
+                                            <select id="inputState" class="form-control">
                                                 <option selected>Choose...</option>
-                                                <option value="Mariée">Mariée</option>
-                                                <option value="Célébataire">Célébataire</option>
-                                                <option value="Divorcée">Divorcée</option>
+                                                <option>Mariée</option>
+                                                <option>Célébataire</option>
+                                                <option>Divorcée</option>
                                             </select>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Prénom Père</label>
-                                                <input required type="text" name="pere" class="form-control" id="inputEmail4" placeholder="">
+                                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Nom & Prénom Mère</label>
-                                                <input required type="text" name="nom_prenom_mere" class="form-control" id="inputPassword4" placeholder="">
+                                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Date de Naissance Père</label>
-                                                <input required type="date" name="naissance_pere" class="form-control" id="inputEmail4" placeholder="">
+                                                <input type="date" class="form-control" id="inputEmail4" placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Date de Naissance Mère</label>
-                                                <input required type="date" class="form-control" name="naissance_mere" id="inputPassword4" placeholder="">
+                                                <input type="date" class="form-control" id="inputPassword4" placeholder="">
                                             </div>
                                         </div>
                                         <div class="custom-file-container" data-upload-id="myFirstImage">
                                             <h6>Passeport</h6>
                                             <label> <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
                                             <label class="custom-file-container__custom-file">
-                                                <input required type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
-                                                <input required type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="image/*">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                                                 <span class="custom-file-container__custom-file__custom-file-control"></span>
                                             </label>
                                             <div class="custom-file-container__image-preview"></div>
@@ -439,12 +404,11 @@
                                         <div class="form-group">
                                             <div class="form-check pl-0">
                                                 <div class="custom-control custom-checkbox checkbox-info">
-                                                    <input required type="checkbox" class="custom-control-input" id="gridCheck">
+                                                    <input type="checkbox" class="custom-control-input" id="gridCheck">
                                                     <label class="custom-control-label" for="gridCheck">Valider mes informations</label>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <button type="submit" class="btn btn-primary mt-3">Valider</button>
                                     </form>
                                 </div>
@@ -478,21 +442,6 @@
     <script src="<?php echo e(asset('evisa/bootstrap/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('evisa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')); ?>"></script>
     <script src="<?php echo e(asset('evisa/assets/js/app.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/toastr.min.js')); ?>"></script>	
-
-    <script>
-        <?php if(session('error')): ?>
-        	$(function(){
-                toastr.error('<?php echo e(Session::get("error")); ?>')
-            })
-
-        <?php endif; ?>
-        <?php if(session('success')): ?>
-            toastr.success('<?php echo e(Session::get("success")); ?>')
-        <?php endif; ?>
-            
-
-    </script>
 
     <script>
         $(document).ready(function() {
@@ -502,6 +451,7 @@
     <script src="<?php echo e(asset('evisa/plugins/highlight/highlight.pack.js')); ?>"></script>
     <script src="<?php echo e(asset('evisa/assets/js/custom.js')); ?>"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
+    <script src="<?php echo e(asset('evisa/assets/js/scrollspyNav.js')); ?>"></script>
 </body>
 
 </html>

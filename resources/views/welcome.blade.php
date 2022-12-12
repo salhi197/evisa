@@ -346,6 +346,7 @@
 
                                 
                                     <form method="post" action="{{route('demande.store')}}">
+                                        @csrf
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Nom</label>
