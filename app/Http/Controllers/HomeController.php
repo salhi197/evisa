@@ -12,6 +12,14 @@ use App\Reglement;
 use Carbon\Carbon;
 class HomeController extends Controller
 {
+    public function welcome()
+    {
+        if(Auth::check()){
+            return view('welcome');//,compact('operations'));    
+        }else{
+            return redirect()->route('login')->with('success', 'Inséré avec succés ');
+        }
+    }
     public function search(Request $request)
     {
         $_type= "";

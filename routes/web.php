@@ -47,13 +47,14 @@ Route::get('/recharger-compte', function () {
 Route::get('/admin', 'AdminController@admin')->name('admin');
 
 Route::view('/comingsoon', 'comingsoon')->name('comingsoon');
-Route::view('/', 'welcome')->name('welcome');
+// Route::view('/', 'welcome')->name('welcome');
 Route::view('/rapport', 'rapport')->name('rapport');
 Route::view('/forum', 'forum')->name('forum');
 
 Auth::routes();
 Route::view('/home', 'home')->name('home');
 Route::post('/search','HomeController@search')->name('search');
+Route::get('/', 'HomeController@welcome')->name('welcome');
 
 Route::get('/gr', 'HomeController@gr')->name('gr');
 Route::get('/police', 'HomeController@police')->name('police');

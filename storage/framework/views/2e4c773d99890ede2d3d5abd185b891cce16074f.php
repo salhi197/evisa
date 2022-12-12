@@ -69,8 +69,23 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
 
-                            </li>
 
+
+                            </li>
+                            <li class="menu single-menu active">
+                                <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                                    <div class="">
+                                        <span>Déconnexion</span>
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                            <?php echo e(csrf_field()); ?>
+
+                                        </form>                                
+
+                                    </div>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                            </li>
 
                         </ul>
                     </nav>
@@ -477,7 +492,7 @@
         <?php endif; ?>
             
 
-        </script>
+    </script>
 
     <script>
         $(document).ready(function() {

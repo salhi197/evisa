@@ -44,7 +44,7 @@
 				<div class="">
 					<div class="col col-login mx-auto">
 						<div class="text-center">
-                            <!-- <img src="{{asset('log.png')}}" width="150px"/> -->
+							<img src="{{asset('evisa/admin/assets/img/logo.jpg')}}" alt="admin-profile" class="img-fluid">
 						</div>
 					</div>
 					<div class="container-login100">
@@ -75,15 +75,7 @@
                                         <i class="fa fa-door-open"></i>Connexion
 									</button>
 								</div>
-								<p>
-									Vous n'avez pas encore un comtpe ?
-									<a href="{{route('register')}}"> S'enregistrer .</a>
-
-								</p>
 								<br>
-								<a href="{{route('forget.password')}}">
-									Mot de passe Oublié ?
-								</a>
 
 							</form>
 						</div>
