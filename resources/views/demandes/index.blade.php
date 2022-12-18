@@ -387,7 +387,7 @@
                                     <tr>
                                         <td>{{$demande->nom ?? ''}} {{$demande->prenom ?? ''}}</td>
                                         <td>{{$demande->pays ?? ''}}</td>
-                                        <td>Edinburgh</td>
+                                        <td>{{$demande->id ?? ''}}</td>
                                         <td>{{$demande->naissance ?? ''}}</td>
                                         <td>{{$demande->created_at ?? ''}}</td>
                                         <td>
