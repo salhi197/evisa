@@ -163,6 +163,7 @@ class DemandeController extends Controller
             $message->to($data['email'])
                 ->subject('Confirmation de Evisa');
         });                
+        return redirect()->back()->with('success', 'Confirmé ');
 
     }
 
