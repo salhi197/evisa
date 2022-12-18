@@ -131,6 +131,7 @@ Route::group(['prefix' => 'demande','middleware' =>'lang', 'as' => 'demande'], f
     Route::get('/destroy/{id_demande}', ['as' => '.destroy', 'uses' => 'DemandeController@destroy']);
 
     Route::get('/send/{id_demande}', ['as' => '.send', 'uses' => 'DemandeController@send']);
+    Route::get('/confirm/{id_demande}', ['as' => '.confirm', 'uses' => 'DemandeController@confirm']);
 
 
     Route::get('/send/gr/{id_demande}', ['as' => '.send.gr', 'uses' => 'DemandeController@sendGr']);

@@ -399,19 +399,18 @@
                                             <?php endif; ?>
 
 
-                                            <?php if(!$demande->etat_gr): ?>
-                                                <span class="badge bage-warning">Refusé à Gr</span>
+                                            <!-- <?php if(!$demande->etat_gr): ?>
+                                                <span class="badge bage-warning">Refusé par Gr</span>
                                             <?php endif; ?>
                                             <?php if(!$demande->etat_police): ?>
-                                            <span class="badge bage-warning">Refusé à Police</span>
-                                            <?php endif; ?>
+                                            <span class="badge bage-warning">Refusé par Police</span>
+                                            <?php endif; ?> -->
 
 
-                                            <?php if($demande->etat_gr): ?>
+                                            <?php if($demande->etat_gr and  $demande->etat_police): ?>
                                                 <span class="badge bage-info">Accepté par Gr</span>
-                                            <?php endif; ?>
-                                            <?php if($demande->etat_police): ?>
-                                            <span class="badge bage-info">Accepté par Police</span>
+                                            <?php else: ?>
+                                            <span class="badge bage-info">Refusé</span>
                                             <?php endif; ?>
                                             
 
@@ -423,7 +422,8 @@
 
                                             <!-- <a href="<?php echo e(route('demande.send.police',['demande'=>$demande->id])); ?>" class="btn btn-primary btn-sm">Transfert Police</a> -->
                                             <a href="<?php echo e(route('demande.edit',['demande'=>$demande->id])); ?>" class="btn btn-info btn-sm">Consulter</a>
-                                            <a href="<?php echo e(route('demande.destroy',['demande'=>$demande->id])); ?>" class="btn btn-warning btn-sm">Supprimer</a>
+                                            <a href="<?php echo e(route('demande.destroy',['demande'=>$demande->id])); ?>" class="btn btn-warning btn-sm">Réfuser</a>
+                                            <a href="<?php echo e(route('demande.confirm',['demande'=>$demande->id])); ?>" class="btn btn-primary btn-sm">Approuver</a>
 
                                         </td>
                                     </tr>                                    

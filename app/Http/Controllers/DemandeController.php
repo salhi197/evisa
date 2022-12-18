@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Demande;
 use Illuminate\Http\Request;
+use Mail;
+use Auth;
+
+
 
 class DemandeController extends Controller
 {
     public function index()
     {
-        $demandes = Demande::all();
-        return view('demandes.index',compact('demandes'));
+        if(Auth::guard('admin')->check()){
+            $demandes = Demande::all();
+            return view('demandes.index',compact('demandes'));
+        }else{
+            return redirect()->route('login.admin');//->with('success', 'Inséré avec succés ');           
+        }
+
     }
 
 
@@ -120,6 +129,16 @@ class DemandeController extends Controller
         $demande->naissance_mere = $request['naissance_mere'];
 
         $demande->save();
+        if($request->file('passport')){
+            try {
+                $path = $request->file('passport')->store('/passports');
+            } catch (Exception $e) {
+                return Redirect::back()->withInput()->with('error', 'passports Trés grande');                
+            }
+            $demande->passport = $path;
+        }
+
+        
         return redirect()->route('welcome')->with('success', 'Inséré avec succés ');
 
     }
@@ -130,9 +149,21 @@ class DemandeController extends Controller
      * @param  \App\Demande  $demande
      * @return \Illuminate\Http\Response
      */
-    public function show($demande)
+    public function confirm($id_demande)
     {
-        //
+        $demande = Demande::find($id_demande);
+
+        $data = [
+            'subject' => 'Confirmation de votre demande evisa ALgérie',
+            'email' => $demande->email,
+            'content' => "Confirmation de votre demande evisa ALgérie",
+        ];
+
+        Mail::send('email_confirmation', ['data' => $data], function ($message) use ($data) {
+            $message->to($data['email'])
+                ->subject('Confirmation de Evisa');
+        });                
+
     }
 
     /**
@@ -195,6 +226,17 @@ class DemandeController extends Controller
         $demande = Demande::find($id_demande);
         // $demande->gr = 1;
         $demande->delete();
+        $data = [
+            'subject' => 'Refus de votre demande evisa ALgérie',
+            'email' => $demande->email,
+            'content' => "Refus de votre demande evisa ALgérie",
+        ];
+
+        Mail::send('email_refus', ['data' => $data], function ($message) use ($data) {
+            $message->to($data['email'])
+                ->subject('Refus de Transfert');
+        });                
+
         return redirect()->back()->with('success', 'Demande Supprimée  ');        
     }
 }

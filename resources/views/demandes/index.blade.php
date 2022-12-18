@@ -392,26 +392,25 @@
                                         <td>{{$demande->created_at ?? ''}}</td>
                                         <td>
                                             @if($demande->gr)
-                                                <span class="badge bage-info">Transféré à Gr</span>
+                                                <span class="b  adge bage-info">Transféré à Gr</span>
                                             @endif
                                             @if($demande->police)
                                             <span class="badge bage-info">Transféré à Police</span>
                                             @endif
 
 
-                                            @if(!$demande->etat_gr)
+                                            <!-- @if(!$demande->etat_gr)
                                                 <span class="badge bage-warning">Refusé par Gr</span>
                                             @endif
                                             @if(!$demande->etat_police)
                                             <span class="badge bage-warning">Refusé par Police</span>
-                                            @endif
+                                            @endif -->
 
 
-                                            @if($demande->etat_gr)
+                                            @if($demande->etat_gr and  $demande->etat_police)
                                                 <span class="badge bage-info">Accepté par Gr</span>
-                                            @endif
-                                            @if($demande->etat_police)
-                                            <span class="badge bage-info">Accepté par Police</span>
+                                            @else
+                                            <span class="badge bage-info">Refusé</span>
                                             @endif
                                             
 
@@ -423,7 +422,8 @@
 
                                             <!-- <a href="{{route('demande.send.police',['demande'=>$demande->id])}}" class="btn btn-primary btn-sm">Transfert Police</a> -->
                                             <a href="{{route('demande.edit',['demande'=>$demande->id])}}" class="btn btn-info btn-sm">Consulter</a>
-                                            <a href="{{route('demande.destroy',['demande'=>$demande->id])}}" class="btn btn-warning btn-sm">Supprimer</a>
+                                            <a href="{{route('demande.destroy',['demande'=>$demande->id])}}" class="btn btn-warning btn-sm">Réfuser</a>
+                                            <a href="{{route('demande.confirm',['demande'=>$demande->id])}}" class="btn btn-primary btn-sm">Approuver</a>
 
                                         </td>
                                     </tr>                                    

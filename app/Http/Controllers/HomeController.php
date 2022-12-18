@@ -50,8 +50,13 @@ class HomeController extends Controller
 
     public function police()
     {
-        $demandes = Demande::where('police',1)->get();        
-        return view('police',compact('demandes'));
+        if(Auth::guard('gr')->check()){
+            $demandes = Demande::where('police',1)->get();        
+            return view('police',compact('demandes'));
+        }else{
+            return redirect()->route('login.gr');//->with('success', 'Inséré avec succés ');           
+        }
+
         
     }
 
@@ -59,8 +64,13 @@ class HomeController extends Controller
 
     public function gr()
     {
-        $demandes = Demande::where('gr',1)->get();        
-        return view('gr',compact('demandes'));
+        if(Auth::guard('gr')->check()){
+            $demandes = Demande::where('gr',1)->get();        
+            return view('gr',compact('demandes'));    
+        }else{
+            return redirect()->route('login.gr');//->with('success', 'Inséré avec succés ');           
+        }
+
         
     }
 
