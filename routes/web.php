@@ -32,8 +32,8 @@ Route::get('/clear', function () {
     $clearconfig = Artisan::call('config:cache');
     echo "Config cleared<br>";
 
-    $cleardebugbar = Artisan::call('debugbar:clear');
-    echo "Debug Bar cleared<br>";
+    // $cleardebugbar = Artisan::call('debugbar:clear');
+    // echo "Debug Bar cleared<br>";
 });
 
 Route::get('/faq', function () {return view('faq');})->name('faq')->middleware('lang');
